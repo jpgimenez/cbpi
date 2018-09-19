@@ -2,7 +2,7 @@
 
 This is a CraftBeerPi 3.0 sensor that allows you to have up to 4 physical buttons in order to accept GPIO button press after which it performs an API call. 
 
-The momentary switches are in low state by default and should get 3,3v to be activated. 
+The momentary switches are in low state by default and should get 3,3v to be activated. The sensor can be hidden on the dashboard as it does not return a sensor value.
 
 Note: applying voltage on your GPIO pins is at your own risk.
 
