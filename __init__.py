@@ -40,19 +40,19 @@ class GPIObutton(SensorActive):
         self.data_old = 0
         GPIO.setup(int(self.ba_gpio), GPIO.IN , pull_up_down = GPIO.PUD_DOWN)
         GPIO.remove_event_detect(int(self.ba_gpio))
-        GPIO.add_event_detect(int(self.ba_gpio), GPIO.BOTH, callback=self.IO_interrupt, bouncetime=self.ab_debounce)
+        GPIO.add_event_detect(int(self.ba_gpio), GPIO.BOTH, callback=self.IO_interrupt, bouncetime=int(self.ab_debounce))
         if int(self.ca_gpio) != 99:
             GPIO.setup(int(self.ca_gpio), GPIO.IN , pull_up_down = GPIO.PUD_DOWN)
             GPIO.remove_event_detect(int(self.ca_gpio))
-            GPIO.add_event_detect(int(self.ca_gpio), GPIO.BOTH, callback=self.IO_interrupt, bouncetime=self.ab_debounce)
+            GPIO.add_event_detect(int(self.ca_gpio), GPIO.BOTH, callback=self.IO_interrupt, bouncetime=int(self.ab_debounce))
         if int(self.da_gpio) != 99:
             GPIO.setup(int(self.da_gpio), GPIO.IN , pull_up_down = GPIO.PUD_DOWN)
             GPIO.remove_event_detect(int(self.da_gpio))
-            GPIO.add_event_detect(int(self.da_gpio), GPIO.BOTH, callback=self.IO_interrupt, bouncetime=self.ab_debounce)
+            GPIO.add_event_detect(int(self.da_gpio), GPIO.BOTH, callback=self.IO_interrupt, bouncetime=int(self.ab_debounce))
         if int(self.ea_gpio) != 99:
             GPIO.setup(int(self.ea_gpio), GPIO.IN , pull_up_down = GPIO.PUD_DOWN)
             GPIO.remove_event_detect(int(self.ea_gpio))
-            GPIO.add_event_detect(int(self.ea_gpio), GPIO.BOTH, callback=self.IO_interrupt, bouncetime=self.ab_debounce)
+            GPIO.add_event_detect(int(self.ea_gpio), GPIO.BOTH, callback=self.IO_interrupt, bouncetime=int(self.ab_debounce))
         self.api.app.logger.info("GPIO - Init Complete")
         self.data_received(0)
 
